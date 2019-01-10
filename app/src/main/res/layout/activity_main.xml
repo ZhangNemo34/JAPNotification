@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/txtBack"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="50px"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginRight="@dimen/horizontal_margin"
+            android:src="@drawable/logo"/>
+
+        <LinearLayout
+            android:id="@+id/lytBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20px"
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlue"/>
+            <TextView
+                android:id="@+id/txtBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlue"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lytBalance"
+            android:orientation="vertical">
+
+            <com.justanotherpanel.app.views.EditBox
+                android:id="@+id/editNotifBalance"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="@dimen/form_margin"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:hint="Please input min notification amount"
+                android:textSize="@dimen/font_normal"
+                android:singleLine="true"
+                android:inputType="numberDecimal"
+                android:background="@drawable/round_white" />
+
+            <FrameLayout
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginRight="@dimen/horizontal_margin"
+                android:layout_marginBottom="@dimen/form_margin"
+                android:background="@drawable/round_blue">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Notify Me"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_normal"
+                    android:elevation="2dp"/>
+
+                <ProgressBar
+                    android:id="@+id/prgOrder"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:visibility="gone"
+                    android:layout_gravity="center_vertical|right"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/horizontal_margin"
+                android:layout_marginRight="@dimen/horizontal_margin">
+
+                <TextView
+                    android:id="@+id/txtError"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/alert_low_balance"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_small"
+                    android:background="@drawable/round_red"/>
+
+                <TextView
+                    android:id="@+id/txtSuccess"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/alert_save_notif_balance"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_small"
+                    android:background="@drawable/round_green"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/lytAddedServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10px"
+                        android:text="Added Services"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerAdded"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lytUpdatedServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10px"
+                        android:text="Updated Services"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerUpdated"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lytDeletedServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10px"
+                        android:text="Deleted Services"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerDeleted"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:padding="5dp"
+        android:text="Logout"
+        android:textSize="@dimen/font_small"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"/>
+
+</RelativeLayout>

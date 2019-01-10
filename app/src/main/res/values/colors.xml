@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/colorBlue</color>
+    <color name="colorPrimaryDark">@color/colorError</color>
+    <color name="colorAccent">@color/colorError</color>
+
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGrey">#808080</color>
+
+    <color name="colorBackground">#ededed</color>
+    <color name="colorBlue">#148cba</color>
+    <color name="colorOrange">#f05326</color>
+    <color name="colorError">#ff4036</color>
+    <color name="colorSuccess">#28b62c</color>
+
+    <color name="colorInstagram">#9c6b55</color>
+    <color name="colorFacebook">#3b5997</color>
+    <color name="colorTwitter">#55acee</color>
+    <color name="colorYoutube">#ff0000</color>
+</resources>

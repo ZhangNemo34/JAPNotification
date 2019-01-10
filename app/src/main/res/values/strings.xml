@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">JAP Notification</string>
+
+    <string name="channel_name">Jap Notification</string>
+
+    <string name="error_api_empty">API KEY cannot be Empty!</string>
+    <string name="error_network_timeout">Internet Timeout!</string>
+    <string name="error_network">No Internet Connection!</string>
+
+    <string name="alert_save_notif_balance">New balance is saved</string>
+    <string name="alert_low_balance">Current balance is low</string>
+</resources>
